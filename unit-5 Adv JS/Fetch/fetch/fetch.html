@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="container"></div>
+  </body>
+</html>
+<script>
+  let result = fetch("https://reqres.in/api/users?page=2");
+  // console.log(result)
+  result
+    .then(function (res) {
+      return res.json();
+    })
+    .then(function (output) {
+       console.log(output.data)
+      display(output.data);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+
+  function display(array) {
+  var container = document.getElementById("container");
+
+    container.innerHTML = "";
+    array.forEach(function (ele) {
+        var div = document.createElement("div")
+      var img = document.createElement("img");
+      var p = document.createElement("p");
+      p.innerText = ele.first_name;
+      img.setAttribute("src", ele.avatar);
+      div.append(p, img);
+      container.append(div);
+    });
+
+  }
+</script>

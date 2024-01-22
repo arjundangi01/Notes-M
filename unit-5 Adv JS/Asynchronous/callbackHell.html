@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Call Back Hell</h1>
+  </body>
+</html>
+<script>
+  
+//   console.log("first")
+//   setTimeout(()=>{
+//     console.log("second")
+
+//   },4000)
+//   console.log("third")
+
+//  E-commerce
+//  selectItem --- address --- payment 
+  
+function selectItem(callback){
+    setTimeout(()=>{
+        let item = "T-shirt";
+        console.log("here is the Item "+ item)
+        // return item;
+        callback(item);
+    },3000)
+}
+function address(item,callback){
+    setTimeout(()=>{
+        let address = "Indore";
+        console.log("here is the address "+ address)
+        // return item;
+        callback(address);
+    },3000)
+}
+function payment(item,address,callback){
+    setTimeout(()=>{
+        let payment = 1500;
+        console.log("here is the payment "+ payment)
+        // return item;
+        callback(payment);
+    },3000)
+}
+
+selectItem((item)=>{
+ address(item,(address)=>{
+      payment(item,address,(payment)=>{
+        console.log("Transection completed" + item + ", " + address +", "+payment)
+
+      })
+ })
+});
+
+</script>

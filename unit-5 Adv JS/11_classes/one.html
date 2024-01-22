@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+
+<script>
+  class Person {
+    constructor(name, gender, age) {
+      this.name = name;
+      this.gender = gender;
+      this.age = age;
+      this.isFirstDose = false;
+      Person.count++;
+    }
+
+    firstDose(newValue) {
+      this.isFirstDose = newValue;
+    }
+
+    display() {
+      // console.log(this.name +" " + this.gender + " " +this.age + " Vaccination - " +this.isFirstDose);
+      const { name, gender, age, isFirstDose } = this;
+      console.log(name, gender, age, isFirstDose);
+    }
+
+    static count = 0;
+
+    static getCount() {
+      console.log(Person.count);
+    }
+  }
+
+  let person1 = new Person("arjun", "dangi", 21);
+  let person2 = new Person("arjun", "dangi", 21);
+
+  person1.firstDose(true);
+  person1.display();
+  Person.getCount();
+
+  class Student extends Person {
+    constructor(name, gender, age, location) {
+      super(name, gender, age);
+      this.location = location;
+    }
+  }
+
+  let g = new Student("arjun", "arjun", 21, "Indore");
+  console.log(g);
+
+  class Car {
+    constructor(engine, seats) {}
+  }
+
+  class Maruti extends Car {
+    constructor(engine, seat) {
+      super(engine, seat);
+      this.color = "red";
+    }
+  }
+
+  function f1() {
+    let a = 10;
+    function inner() {
+      console.log(a);
+    }
+    return inner;
+  }
+
+  let outer = f1();
+</script>

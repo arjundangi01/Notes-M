@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <p id="sec">0</p>
+    <p id="min">0</p>
+    <p id="hou">0</p>
+
+    <button id="start"> start</button>
+    <button id="stop"> stop</button>
+</body>
+</html>
+<script>
+    var second =0;
+    var min =0;
+    var hour =0;
+
+    function display(){
+         second++;
+        
+         if(second==6){
+            min++;
+            second=0
+         }
+         if(min == 6){
+            hour++;
+            second=0;
+            min=0;
+         }
+         document.querySelector("#sec").textContent=second;
+         document.querySelector("#min").textContent=min;
+         document.querySelector("#hou").textContent=hour;
+
+    }
+    var id;
+   var btn = document.querySelector("#start");
+   btn.addEventListener("click",function(){
+     id = setInterval(display,1000)
+   })
+   var btn2 = document.querySelector("#stop");
+   btn2.addEventListener("click",function(){
+    clearInterval(id);
+   })
+    // display()
+    
+</script>

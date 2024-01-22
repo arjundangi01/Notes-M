@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        
+        <div>
+          <button id="submit">Submit</button>
+        </div>
+      </form>
+    
+</body>
+</html>
+<script type="module">
+  
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
+  import { getAuth, signInWithPopup, GoogleAuthProvider} from "https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js";
+  
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyBOg-5BWLw20lvvDbjdphMaZVJL9eocKfU",
+    authDomain: "unit-5-a00a8.firebaseapp.com",
+    databaseURL: "https://unit-5-a00a8-default-rtdb.firebaseio.com",
+    projectId: "unit-5-a00a8",
+    storageBucket: "unit-5-a00a8.appspot.com",
+    messagingSenderId: "1098934223464",
+    appId: "1:1098934223464:web:b8b96bf6e0dba33659f1dd"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+
+
+const provider = new GoogleAuthProvider();
+
+
+const auth = getAuth();
+signInWithPopup(auth, provider)
+  .then((result) => {
+    // This gives you a Google Access Token. You can use it to access the Google API.
+    const credential = GoogleAuthProvider.credentialFromResult(result);
+    const token = credential.accessToken;
+    // The signed-in user info.
+    const user = result.user;
+    // IdP data available using getAdditionalUserInfo(result)
+    // ...
+  }).catch((error) => {
+    // Handle Errors here.
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // The email of the user's account used.
+    const email = error.customData.email;
+    // The AuthCredential type that was used.
+    const credential = GoogleAuthProvider.credentialFromError(error);
+    // ...
+  });
+
+
+  let submitBtn = document.getElementById("submit");
+
+</script>

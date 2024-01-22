@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Index</title>
+    <style>
+      #navbar {
+        display: flex;
+        justify-content: space-evenly;
+        cursor: pointer;
+        background-color: antiquewhite;
+      }
+      #container {
+        font-size: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="navbar"></div>
+    <div id="container"></div>
+  </body>
+</html>
+<script type="module">
+  import  {navbar,forAll } from "./nav.js";
+
+  var navbarDiv = document.getElementById("navbar");
+  navbarDiv.innerHTML = navbar();
+
+//   -------------------------------------------------
+forAll();
+
+</script>

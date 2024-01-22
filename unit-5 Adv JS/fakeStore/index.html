@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 20px;
+        }
+        .item img{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <a href=""><h2>Cart</h2></a>
+    </div>
+    <select name="" id="filter">
+        <option value="">Select the filter</option>
+        <option value="men's clothing">Men</option>
+        <option value="women's clothing">Women</option>
+        <option value="electronics">Electronics</option>
+        <option value="jewelery">Jewelery</option>
+
+    </select>
+    <div id="container" ></div>
+</body>
+</html>
+<script src="./index.js" type="module" ></script>

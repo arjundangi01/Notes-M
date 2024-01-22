@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  var father = {
+    name: "Vijay",
+    lastName: "Dangi",
+    location: "Indore",
+  };
+
+  var child = Object.create(father); //inherited from father
+  child.name = "Arjun"; //his own separate property
+  console.log(child.name);
+</script>

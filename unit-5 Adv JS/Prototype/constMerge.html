@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Merge two contrutot fun</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  function person(firstName, lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+
+  person.prototype.school = "Masai School";
+
+  person.prototype.print = function () {
+    console.log(this.className);
+  };
+
+  Object.setPrototypeOf(student.prototype, person.prototype);
+
+  function student(firstName, lastName, rollNo, className) {
+    person.call(this, firstName, lastName);
+    this.rollNo = rollNo;
+    this.className = className;
+  }
+  
+  var student1 = new student("Arjun", "Dangi", 114, 5);
+  console.log(student1.school);
+
+  student1.print();
+</script>

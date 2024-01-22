@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="container"></div>
+  </body>
+</html>
+<script>
+  getData();
+async function getData() {
+  try {
+    let result = await fetch(
+      `https://api.openweathermap.org/data/2.5/forecast?q=Indore&appid=0c6a2b00ee56cde33b5274a6a568a138`
+    );
+
+    let data = await result.json();
+ 
+    console.log(data);
+  } catch (error) {
+    console.log(error);
+  }
+}
+  
+</script>

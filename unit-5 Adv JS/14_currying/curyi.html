@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  // 1 way
+  //   function a(z) {
+  //     return (b) => {
+  //       return (c) => {
+  //         return z + +b + +c;
+  //       };
+  //     };
+  //   }
+  //   let a1 = a(2)(3)(4);
+
+  //   console.log(a1);
+
+  //2 way when one return statement
+
+  //   let x = (A) => (B) => (C) => A + B + C;
+  //   console.log(x(2)(3)(4));
+
+  //   function ans(number){
+  //   return (array)=>{
+  //     let a = array.filter((ele)=>{
+  //         return ele%number==0;
+  //     });
+
+  //     return a;
+  //   }
+  // }
+
+  // console.log(ans(2)([1,2,3,4]));
+
+  //   function z(a) {
+  //     return (b) => {
+  //       return (c) => {
+  //         if (a == "mul") {
+  //           return b * c;
+  //         } else if (a == "add") {
+  //           return b + +c;
+  //         } else if (a == "sub") {
+  //           return b - c;
+  //         } else if (a == "div") {
+  //           return a / b;
+  //         }
+  //       };
+  //     };
+  //   }
+
+  //   console.log(z("add")(2)(3))
+
+  // infinite currying
+  function sum(a) {
+    return function (b) {
+      if (b) {
+        return sum(a + b);
+      }
+      return a;
+    };
+  }
+  console.log(sum(2)(3)(4)(5)());
+</script>
